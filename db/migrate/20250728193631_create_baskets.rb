@@ -5,5 +5,6 @@ class CreateBaskets < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+    add_index :baskets, :user_id, unique: true
   end
 end
