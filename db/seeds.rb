@@ -60,3 +60,9 @@ Offer.create!(
 )
 
 puts "✅ Seeded: #{User.count} user(s), #{Product.count} products, #{Offer.count} offers"
+
+DeliveryRule.destroy_all
+
+DeliveryRule.create!(min_total: 0, max_total: 50, charge: 4.95)
+DeliveryRule.create!(min_total: 50, max_total: 90, charge: 2.95)
+DeliveryRule.create!(min_total: 90, max_total: Float::INFINITY, charge: 0)
